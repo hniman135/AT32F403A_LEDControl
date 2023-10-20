@@ -38,48 +38,48 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := LED_toggle(register)
+BUILD_ARTIFACT_NAME := LED_control
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 SECONDARY_FLASH += \
-LED_toggle(register).hex \
+LED_control.hex \
 
 SECONDARY_SIZE += \
-LED_toggle(register).siz \
+LED_control.siz \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: LED_toggle(register).elf secondary-outputs
+main-build: LED_control.elf secondary-outputs
 
 # Tool invocations
-LED_toggle(register).elf: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
+LED_control.elf: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GNU Arm Cross C Linker'
-	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -ffunction-sections  -g -T "D:\ThucTapDoanhNghiep\eclipse-workspace\LED_toggle(register)/ldscripts/AT32F403AxG_FLASH.ld" -Xlinker --gc-sections -Wl,-Map,"LED_toggle(register).map" --specs=nano.specs --specs=nosys.specs -o "LED_toggle(register).elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -ffunction-sections  -g -T "D:\ThucTapDoanhNghiep\eclipse-workspace\LED_control/ldscripts/AT32F403AxG_FLASH.ld" -Xlinker --gc-sections -Wl,-Map,"LED_control.map" --specs=nano.specs --specs=nosys.specs -o "LED_control.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-LED_toggle(register).hex: LED_toggle(register).elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
+LED_control.hex: LED_control.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Invoking: GNU Arm Cross Create Flash Image'
-	arm-none-eabi-objcopy -O ihex "LED_toggle(register).elf"  "LED_toggle(register).hex"
+	arm-none-eabi-objcopy -O ihex "LED_control.elf"  "LED_control.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-LED_toggle(register).siz: LED_toggle(register).elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
+LED_control.siz: LED_control.elf makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Invoking: GNU Arm Cross Print Size'
-	arm-none-eabi-size --format=berkeley "LED_toggle(register).elf"
+	arm-none-eabi-size --format=berkeley "LED_control.elf"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(SECONDARY_FLASH)$(SECONDARY_SIZE)$(ASM_DEPS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS) LED_toggle(register).elf
+	-$(RM) $(OBJS)$(SECONDARY_FLASH)$(SECONDARY_SIZE)$(ASM_DEPS)$(S_DEPS)$(S_UPPER_DEPS)$(C_DEPS) LED_control.elf
 	-@echo ' '
 
 secondary-outputs: $(SECONDARY_FLASH) $(SECONDARY_SIZE)

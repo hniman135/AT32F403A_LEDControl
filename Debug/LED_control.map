@@ -2128,7 +2128,7 @@ LOAD d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm
                 0x0000010f       0x34 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-init.o)
  .ARM.attributes
                 0x00000143       0x1e d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
-OUTPUT(LED_toggle(register).elf elf32-littlearm)
+OUTPUT(LED_control.elf elf32-littlearm)
 LOAD linker stubs
 LOAD d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc.a
 LOAD d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a

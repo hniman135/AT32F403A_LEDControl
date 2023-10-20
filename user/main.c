@@ -29,42 +29,43 @@ void GPIO_Configuration();
 /*create a struct for RRC register*/
 struct My_RCC_Type
 {
-	uint32_t My_CTRL;
-	uint32_t My_CFG;
-	uint32_t My_CLKINT;
-	uint32_t My_APB2RST;
-	uint32_t My_APB1RST;
-	uint32_t My_AHBEN;
-	uint32_t My_APB2EN;
-	uint32_t My_APB1EN;
-	uint32_t My_BPDC;
-	uint32_t My_CTRLSTS;
-	uint32_t My_AHBRST;
-	uint32_t My_MISC1;
-	uint32_t My_MISC2;
-	uint32_t My_MISC3;
-	uint32_t My_INTMAP;
+	uint32_t My_CTRL;		//Clock control register
+	uint32_t My_CFG;		//Clock configuration register
+	uint32_t My_CLKINT;		//Clock interrupt register
+	uint32_t My_APB2RST;	//APB2 peripheral reset register
+	uint32_t My_APB1RST;	//APB1 peripheral reset register
+	uint32_t My_AHBEN;		//APB peripheral clock enable register
+	uint32_t My_APB2EN;		//APB2 peripheral clock enable register
+	uint32_t My_APB1EN;		//APB1 peripheral clock enable register
+	uint32_t My_BPDC;		//Battery powered domain control register
+	uint32_t My_CTRLSTS;	//Control/status register
+	uint32_t My_AHBRST;		//AHB peripheral reset register
+	uint32_t My_MISC1;		//Additional register1
+	uint32_t My_MISC2;		//Additional register2
+	uint32_t My_MISC3;		//Additional register3
+	uint32_t My_INTMAP;		//Interrupt map register
 };
 
 /*create a struct for GPIO register*/
 struct My_GPIO_Type
 {
-	uint32_t My_CFGLR;
-	uint32_t My_CFGHR;
-	uint32_t My_IDT;
-	uint32_t My_ODT;
-	uint32_t My_SCR;
-	uint32_t My_CLR;
-	uint32_t My_WPR;
-	uint32_t My_SRCTR;
-	uint32_t My_HDRV;
+	uint32_t My_CFGLR;		//GPIO configuration register low
+	uint32_t My_CFGHR;		//GPIO configuration register high
+	uint32_t My_IDT;		//GPIO input data register
+	uint32_t My_ODT;		//GPIO output data register
+	uint32_t My_SCR;		//GPIO set/clear register
+	uint32_t My_CLR;		//GPIO clear register
+	uint32_t My_WPR;		//GPIO write protection register
+	uint32_t My_SRCTR;		//(no mention)
+	uint32_t My_HDRV;		//GPIO huge current control register
 };
 
 /*====================================================================================
  * 								LOCAL VARIABLES
 ====================================================================================*/
 struct My_RCC_Type *My_RCC = (struct My_RCC_Type *)RCC_Address;
-struct My_GPIO_Type *PORTD  = (struct My_GPIO_Type *)PORTD_Address;
+struct My_GPIO_Type *PORTA = (struct My_GPIO_Type *)PORTA_Address;
+struct My_GPIO_Type *PORTD = (struct My_GPIO_Type *)PORTD_Address;
 
 /*====================================================================================
  * 								GLOBAL FUNTIONS
@@ -74,11 +75,16 @@ int main(void)
 	GPIO_Configuration();
 	while(1)
 	{
-		PORTD->My_ODT != 0x2000;
-		Delay_ms(1000);
-		PORTD->My_ODT &= ~0x2000;
-		Delay_ms(1000);
-
+		/*Check if button is holding -> reset(turn off) LED
+		 *if button is releasing -> set(turn on) LED */
+		if (PORTA->My_IDT & 1)
+		{
+			PORTD->My_SCR = 0x20000000;
+		}
+		else
+		{
+			PORTD->My_SCR = 0x2000;
+		}
 	}
 }
 
@@ -87,12 +93,17 @@ int main(void)
 ====================================================================================*/
 void GPIO_Configuration()
 {
-	/*LED2 control by GPIOD, pin 13*/
-	/*Enable clock for PORT D*/
-	My_RCC->My_APB2EN != 0x04;
-	/*Reset PORT D pin 13*/
-	PORTD->My_CFGHR &= 0xFF0FFFFF;
-	/*Output mode, max speed*/
+	/*LED2 control by GPIOD, port 13
+	 *User button control by GPIOA, port0*/
+	/*Enable clock for PORT A&D*/
+	My_RCC->My_APB2EN != 0b100; //portA
+	My_RCC->My_APB2EN != 0b100000; //portD
+	/*
+	* /*Reset GPIOA port 0
+	* PORTA->My_CFGLR &= 0xFFFFFFF4;*/
+	/*Reset GPIOD port 13*/
+	PORTD->My_CFGHR &= 0xFF4FFFFF;
+	/*Output mode General-purpose output push-pull for PD13, max speed*/
 	PORTD->My_CFGHR != 0x00300000;
 }
 
