@@ -2168,14 +2168,14 @@ LOAD d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm
  .debug_line    0x00000263       0x7c ./cmsis/startup_at32f403a_407.o
  .debug_line    0x000002df      0x339 ./cmsis/system_at32f403a_407.o
 
-.debug_str      0x00000000      0xcd1
+.debug_str      0x00000000      0xd0b
  .debug_str     0x00000000      0x1d3 ./user/at32f403a_407_int.o
                                 0x207 (size before relaxing)
- .debug_str     0x000001d3      0x152 ./user/main.o
-                                0x2c4 (size before relaxing)
- .debug_str     0x00000325       0x2f ./cmsis/startup_at32f403a_407.o
+ .debug_str     0x000001d3      0x18c ./user/main.o
+                                0x2bb (size before relaxing)
+ .debug_str     0x0000035f       0x2f ./cmsis/startup_at32f403a_407.o
                                  0x72 (size before relaxing)
- .debug_str     0x00000354      0x97d ./cmsis/system_at32f403a_407.o
+ .debug_str     0x0000038e      0x97d ./cmsis/system_at32f403a_407.o
                                 0xb0b (size before relaxing)
 
 .comment        0x00000000       0x49
