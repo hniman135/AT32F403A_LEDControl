@@ -1865,7 +1865,7 @@ LOAD d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm
                 0x08000000                g_pfnVectors
                 0x08000184                . = ALIGN (0x4)
 
-.text           0x08000184      0x230
+.text           0x08000184      0x264
                 0x08000184                . = ALIGN (0x4)
  *(.text)
  .text          0x08000184       0x40 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -1901,162 +1901,162 @@ LOAD d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm
  .text.main     0x08000224       0x38 ./user/main.o
                 0x08000224                main
  .text.GPIO_Configuration
-                0x0800025c       0x24 ./user/main.o
+                0x0800025c       0x58 ./user/main.o
                 0x0800025c                GPIO_Configuration
  .text.Reset_Handler
-                0x08000280       0x48 ./cmsis/startup_at32f403a_407.o
-                0x08000280                Reset_Handler
+                0x080002b4       0x48 ./cmsis/startup_at32f403a_407.o
+                0x080002b4                Reset_Handler
  .text.Default_Handler
-                0x080002c8        0x2 ./cmsis/startup_at32f403a_407.o
-                0x080002c8                SDIO1_IRQHandler
-                0x080002c8                XMC_IRQHandler
-                0x080002c8                EXINT2_IRQHandler
-                0x080002c8                USBFS_L_CAN1_RX0_IRQHandler
-                0x080002c8                UART8_IRQHandler
-                0x080002c8                SPI4_IRQHandler
-                0x080002c8                I2C2_EVT_IRQHandler
-                0x080002c8                TMR1_OVF_TMR10_IRQHandler
-                0x080002c8                TMR8_TRG_HALL_TMR14_IRQHandler
-                0x080002c8                USBFS_H_CAN1_TX_IRQHandler
-                0x080002c8                I2C1_ERR_IRQHandler
-                0x080002c8                EXINT9_5_IRQHandler
-                0x080002c8                EMAC_IRQHandler
-                0x080002c8                CAN2_RX1_IRQHandler
-                0x080002c8                TMR5_GLOBAL_IRQHandler
-                0x080002c8                SDIO2_IRQHandler
-                0x080002c8                ADC1_2_IRQHandler
-                0x080002c8                SPI1_IRQHandler
-                0x080002c8                TAMPER_IRQHandler
-                0x080002c8                CAN2_RX0_IRQHandler
-                0x080002c8                DMA2_Channel2_IRQHandler
-                0x080002c8                DMA1_Channel4_IRQHandler
-                0x080002c8                TMR8_CH_IRQHandler
-                0x080002c8                USART6_IRQHandler
-                0x080002c8                EXINT0_IRQHandler
-                0x080002c8                USART3_IRQHandler
-                0x080002c8                RTC_IRQHandler
-                0x080002c8                DMA1_Channel7_IRQHandler
-                0x080002c8                CAN1_RX1_IRQHandler
-                0x080002c8                UART5_IRQHandler
-                0x080002c8                ADC3_IRQHandler
-                0x080002c8                ACC_IRQHandler
-                0x080002c8                EMAC_WKUP_IRQHandler
-                0x080002c8                DMA2_Channel1_IRQHandler
-                0x080002c8                EXINT3_IRQHandler
-                0x080002c8                DMA1_Channel6_IRQHandler
-                0x080002c8                UART4_IRQHandler
-                0x080002c8                DMA1_Channel1_IRQHandler
-                0x080002c8                Default_Handler
-                0x080002c8                USBFS_MAPH_IRQHandler
-                0x080002c8                TMR3_GLOBAL_IRQHandler
-                0x080002c8                TMR7_GLOBAL_IRQHandler
-                0x080002c8                CAN1_SE_IRQHandler
-                0x080002c8                CAN2_TX_IRQHandler
-                0x080002c8                I2C3_ERR_IRQHandler
-                0x080002c8                SPI3_I2S3EXT_IRQHandler
-                0x080002c8                TMR1_BRK_TMR9_IRQHandler
-                0x080002c8                USBFS_MAPL_IRQHandler
-                0x080002c8                TMR8_BRK_TMR12_IRQHandler
-                0x080002c8                TMR1_TRG_HALL_TMR11_IRQHandler
-                0x080002c8                DMA1_Channel5_IRQHandler
-                0x080002c8                TMR4_GLOBAL_IRQHandler
-                0x080002c8                EXINT4_IRQHandler
-                0x080002c8                CAN2_SE_IRQHandler
-                0x080002c8                DMA2_Channel6_7_IRQHandler
-                0x080002c8                PVM_IRQHandler
-                0x080002c8                I2C3_EVT_IRQHandler
-                0x080002c8                DMA1_Channel3_IRQHandler
-                0x080002c8                I2C1_EVT_IRQHandler
-                0x080002c8                TMR8_OVF_TMR13_IRQHandler
-                0x080002c8                TMR6_GLOBAL_IRQHandler
-                0x080002c8                EXINT1_IRQHandler
-                0x080002c8                RTCAlarm_IRQHandler
-                0x080002c8                DMA2_Channel4_5_IRQHandler
-                0x080002c8                UART7_IRQHandler
-                0x080002c8                USART2_IRQHandler
-                0x080002c8                DMA1_Channel2_IRQHandler
-                0x080002c8                TMR2_GLOBAL_IRQHandler
-                0x080002c8                FLASH_IRQHandler
-                0x080002c8                SPI2_I2S2EXT_IRQHandler
-                0x080002c8                I2C2_ERR_IRQHandler
-                0x080002c8                USBFSWakeUp_IRQHandler
-                0x080002c8                USART1_IRQHandler
-                0x080002c8                TMR1_CH_IRQHandler
-                0x080002c8                CRM_IRQHandler
-                0x080002c8                EXINT15_10_IRQHandler
-                0x080002c8                WWDT_IRQHandler
-                0x080002c8                DMA2_Channel3_IRQHandler
- *fill*         0x080002ca        0x2 
+                0x080002fc        0x2 ./cmsis/startup_at32f403a_407.o
+                0x080002fc                SDIO1_IRQHandler
+                0x080002fc                XMC_IRQHandler
+                0x080002fc                EXINT2_IRQHandler
+                0x080002fc                USBFS_L_CAN1_RX0_IRQHandler
+                0x080002fc                UART8_IRQHandler
+                0x080002fc                SPI4_IRQHandler
+                0x080002fc                I2C2_EVT_IRQHandler
+                0x080002fc                TMR1_OVF_TMR10_IRQHandler
+                0x080002fc                TMR8_TRG_HALL_TMR14_IRQHandler
+                0x080002fc                USBFS_H_CAN1_TX_IRQHandler
+                0x080002fc                I2C1_ERR_IRQHandler
+                0x080002fc                EXINT9_5_IRQHandler
+                0x080002fc                EMAC_IRQHandler
+                0x080002fc                CAN2_RX1_IRQHandler
+                0x080002fc                TMR5_GLOBAL_IRQHandler
+                0x080002fc                SDIO2_IRQHandler
+                0x080002fc                ADC1_2_IRQHandler
+                0x080002fc                SPI1_IRQHandler
+                0x080002fc                TAMPER_IRQHandler
+                0x080002fc                CAN2_RX0_IRQHandler
+                0x080002fc                DMA2_Channel2_IRQHandler
+                0x080002fc                DMA1_Channel4_IRQHandler
+                0x080002fc                TMR8_CH_IRQHandler
+                0x080002fc                USART6_IRQHandler
+                0x080002fc                EXINT0_IRQHandler
+                0x080002fc                USART3_IRQHandler
+                0x080002fc                RTC_IRQHandler
+                0x080002fc                DMA1_Channel7_IRQHandler
+                0x080002fc                CAN1_RX1_IRQHandler
+                0x080002fc                UART5_IRQHandler
+                0x080002fc                ADC3_IRQHandler
+                0x080002fc                ACC_IRQHandler
+                0x080002fc                EMAC_WKUP_IRQHandler
+                0x080002fc                DMA2_Channel1_IRQHandler
+                0x080002fc                EXINT3_IRQHandler
+                0x080002fc                DMA1_Channel6_IRQHandler
+                0x080002fc                UART4_IRQHandler
+                0x080002fc                DMA1_Channel1_IRQHandler
+                0x080002fc                Default_Handler
+                0x080002fc                USBFS_MAPH_IRQHandler
+                0x080002fc                TMR3_GLOBAL_IRQHandler
+                0x080002fc                TMR7_GLOBAL_IRQHandler
+                0x080002fc                CAN1_SE_IRQHandler
+                0x080002fc                CAN2_TX_IRQHandler
+                0x080002fc                I2C3_ERR_IRQHandler
+                0x080002fc                SPI3_I2S3EXT_IRQHandler
+                0x080002fc                TMR1_BRK_TMR9_IRQHandler
+                0x080002fc                USBFS_MAPL_IRQHandler
+                0x080002fc                TMR8_BRK_TMR12_IRQHandler
+                0x080002fc                TMR1_TRG_HALL_TMR11_IRQHandler
+                0x080002fc                DMA1_Channel5_IRQHandler
+                0x080002fc                TMR4_GLOBAL_IRQHandler
+                0x080002fc                EXINT4_IRQHandler
+                0x080002fc                CAN2_SE_IRQHandler
+                0x080002fc                DMA2_Channel6_7_IRQHandler
+                0x080002fc                PVM_IRQHandler
+                0x080002fc                I2C3_EVT_IRQHandler
+                0x080002fc                DMA1_Channel3_IRQHandler
+                0x080002fc                I2C1_EVT_IRQHandler
+                0x080002fc                TMR8_OVF_TMR13_IRQHandler
+                0x080002fc                TMR6_GLOBAL_IRQHandler
+                0x080002fc                EXINT1_IRQHandler
+                0x080002fc                RTCAlarm_IRQHandler
+                0x080002fc                DMA2_Channel4_5_IRQHandler
+                0x080002fc                UART7_IRQHandler
+                0x080002fc                USART2_IRQHandler
+                0x080002fc                DMA1_Channel2_IRQHandler
+                0x080002fc                TMR2_GLOBAL_IRQHandler
+                0x080002fc                FLASH_IRQHandler
+                0x080002fc                SPI2_I2S2EXT_IRQHandler
+                0x080002fc                I2C2_ERR_IRQHandler
+                0x080002fc                USBFSWakeUp_IRQHandler
+                0x080002fc                USART1_IRQHandler
+                0x080002fc                TMR1_CH_IRQHandler
+                0x080002fc                CRM_IRQHandler
+                0x080002fc                EXINT15_10_IRQHandler
+                0x080002fc                WWDT_IRQHandler
+                0x080002fc                DMA2_Channel3_IRQHandler
+ *fill*         0x080002fe        0x2 
  .text.SystemInit
-                0x080002cc       0x88 ./cmsis/system_at32f403a_407.o
-                0x080002cc                SystemInit
+                0x08000300       0x88 ./cmsis/system_at32f403a_407.o
+                0x08000300                SystemInit
  .text.__libc_init_array
-                0x08000354       0x48 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-init.o)
-                0x08000354                __libc_init_array
+                0x08000388       0x48 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(lib_a-init.o)
+                0x08000388                __libc_init_array
  *(.glue_7)
- .glue_7        0x0800039c        0x0 linker stubs
+ .glue_7        0x080003d0        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0800039c        0x0 linker stubs
+ .glue_7t       0x080003d0        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0800039c        0x0 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x080003d0        0x0 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x0800039c        0x4 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0800039c                _init
- .init          0x080003a0        0x8 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x080003d0        0x4 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x080003d0                _init
+ .init          0x080003d4        0x8 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x080003a8        0x4 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x080003a8                _fini
- .fini          0x080003ac        0x8 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x080003b4                . = ALIGN (0x4)
-                0x080003b4                _etext = .
+ .fini          0x080003dc        0x4 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x080003dc                _fini
+ .fini          0x080003e0        0x8 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x080003e8                . = ALIGN (0x4)
+                0x080003e8                _etext = .
 
-.vfp11_veneer   0x080003b4        0x0
- .vfp11_veneer  0x080003b4        0x0 linker stubs
+.vfp11_veneer   0x080003e8        0x0
+ .vfp11_veneer  0x080003e8        0x0 linker stubs
 
-.v4_bx          0x080003b4        0x0
- .v4_bx         0x080003b4        0x0 linker stubs
+.v4_bx          0x080003e8        0x0
+ .v4_bx         0x080003e8        0x0 linker stubs
 
-.iplt           0x080003b4        0x0
- .iplt          0x080003b4        0x0 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x080003e8        0x0
+ .iplt          0x080003e8        0x0 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rel.dyn        0x080003b4        0x0
- .rel.iplt      0x080003b4        0x0 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x080003e8        0x0
+ .rel.iplt      0x080003e8        0x0 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x080003b4        0x0
-                0x080003b4                . = ALIGN (0x4)
+.rodata         0x080003e8        0x0
+                0x080003e8                . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
-                0x080003b4                . = ALIGN (0x4)
+                0x080003e8                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x080003b4        0x0
-                0x080003b4                __exidx_start = .
+.ARM            0x080003e8        0x0
+                0x080003e8                __exidx_start = .
  *(.ARM.exidx*)
-                0x080003b4                __exidx_end = .
+                0x080003e8                __exidx_end = .
 
-.preinit_array  0x080003b4        0x0
-                0x080003b4                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x080003e8        0x0
+                0x080003e8                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x080003b4                PROVIDE (__preinit_array_end = .)
+                0x080003e8                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x080003b4        0x4
-                0x080003b4                PROVIDE (__init_array_start = .)
+.init_array     0x080003e8        0x4
+                0x080003e8                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x080003b4        0x4 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x080003b8                PROVIDE (__init_array_end = .)
+ .init_array    0x080003e8        0x4 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x080003ec                PROVIDE (__init_array_end = .)
 
-.fini_array     0x080003b8        0x4
+.fini_array     0x080003ec        0x4
                 [!provide]                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x080003b8        0x4 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x080003ec        0x4 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                PROVIDE (__fini_array_end = .)
-                0x080003bc                _sidata = LOADADDR (.data)
+                0x080003f0                _sidata = LOADADDR (.data)
 
-.data           0x20000000        0xc load address 0x080003bc
+.data           0x20000000        0xc load address 0x080003f0
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
@@ -2070,7 +2070,7 @@ LOAD d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm
                 0x08400000                _spim_init_base = LOADADDR (.spim)
                 0x00000000                _spim_init_length = SIZEOF (.spim)
 
-.igot.plt       0x2000000c        0x0 load address 0x080003c8
+.igot.plt       0x2000000c        0x0 load address 0x080003fc
  .igot.plt      0x2000000c        0x0 d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
 .spim           0x08400000        0x0
@@ -2162,11 +2162,11 @@ LOAD d:/at32ide/platform/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm
  .debug_ranges  0x00000070       0x20 ./cmsis/startup_at32f403a_407.o
  .debug_ranges  0x00000090       0x18 ./cmsis/system_at32f403a_407.o
 
-.debug_line     0x00000000      0x618
+.debug_line     0x00000000      0x61b
  .debug_line    0x00000000       0xfc ./user/at32f403a_407_int.o
- .debug_line    0x000000fc      0x167 ./user/main.o
- .debug_line    0x00000263       0x7c ./cmsis/startup_at32f403a_407.o
- .debug_line    0x000002df      0x339 ./cmsis/system_at32f403a_407.o
+ .debug_line    0x000000fc      0x16a ./user/main.o
+ .debug_line    0x00000266       0x7c ./cmsis/startup_at32f403a_407.o
+ .debug_line    0x000002e2      0x339 ./cmsis/system_at32f403a_407.o
 
 .debug_str      0x00000000      0xd0b
  .debug_str     0x00000000      0x1d3 ./user/at32f403a_407_int.o

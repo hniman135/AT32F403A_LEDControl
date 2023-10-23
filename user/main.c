@@ -96,15 +96,15 @@ void GPIO_Configuration()
 	/*LED2 control by GPIOD, port 13
 	 *User button control by GPIOA, port0*/
 	/*Enable clock for PORT A&D*/
-	My_RCC->My_APB2EN != 0b100; //portA
-	My_RCC->My_APB2EN != 0b100000; //portD
+	My_RCC->My_APB2EN |= 0b100; //portA
+	My_RCC->My_APB2EN |= 0b100000; //portD
 	/*
 	* /*Reset GPIOA port 0
 	* PORTA->My_CFGLR &= 0xFFFFFFF4;*/
 	/*Reset GPIOD port 13*/
 	PORTD->My_CFGHR &= 0xFF4FFFFF;
 	/*Output mode General-purpose output push-pull for PD13, max speed*/
-	PORTD->My_CFGHR != 0x00300000;
+	PORTD->My_CFGHR |= 0x00300000;
 }
 
 void Delay_ms(uint16_t time)
