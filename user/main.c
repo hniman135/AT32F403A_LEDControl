@@ -75,15 +75,15 @@ int main(void)
 	GPIO_Configuration();
 	while(1)
 	{
-		/*Check if button is holding -> reset(turn off) LED
-		 *if button is releasing -> set(turn on) LED */
+		/*Check if button is holding -> set(turn on) LED
+		 *if button is releasing -> reset(turn off) LED */
 		if (PORTA->My_IDT & 1)
 		{
-			PORTD->My_SCR = 0x20000000;
+			PORTD->My_SCR = 0x60000000;
 		}
 		else
 		{
-			PORTD->My_SCR = 0x2000;
+			PORTD->My_SCR = 0x6000;
 		}
 	}
 }
@@ -99,9 +99,8 @@ void GPIO_Configuration()
 	My_RCC->My_APB2EN |= 0b100; //portA
 	My_RCC->My_APB2EN |= 0b100000; //portD
 	/*Reset GPIOD port 13*/
-	PORTD->My_CFGHR &= 0xFF4FFFFF;
 	/*Output mode General-purpose output push-pull for PD13, max speed*/
-	PORTD->My_CFGHR |= 0x00300000;
+	PORTD->My_CFGHR |= 0x03300000;
 }
 
 void Delay_ms(uint16_t time)
